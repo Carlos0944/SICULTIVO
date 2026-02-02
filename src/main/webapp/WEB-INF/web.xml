@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee                          http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <!-- 1. Listener de Sesión -->
+    <listener>
+        <listener-class>SICULTIVO.Listeners.SesionListener</listener-class>
+    </listener>
+    <!-- 2. Tiempo de sesión -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <!-- 3. Servlet ÚNICO: LoginServlet ) -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>SICULTIVO.Controlador.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <!-- 4. Filtro de Autenticación -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>SICULTIVO.Filtros.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- 5. Página de inicio (cuando entran a la raíz del proyecto) -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+  <context-param>
+  <param-name>jdbcURL</param-name>
+<param-value>jdbc:mysql://localhost:3306/bd_sicultivo?autoReconnect=true&amp;useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8</param-value>
+</context-param>
+
+<context-param>
+  <param-name>jdbcUSERName</param-name>
+  <param-value>root</param-value>
+</context-param>
+
+<context-param>
+  <param-name>jdbcPassword</param-name>
+  <param-value>root</param-value>
+</context-param>
+
+</web-app>
