@@ -30,9 +30,9 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-  <context-param>
+ <context-param>
   <param-name>jdbcURL</param-name>
-<param-value>jdbc:mysql://localhost:3306/bd_sicultivo?autoReconnect=true&amp;useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8</param-value>
+  <param-value>jdbc:mysql://switchback.proxy.rlwy.net:24215/railway?useSSL=false&amp;serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;allowPublicKeyRetrieval=true</param-value>
 </context-param>
 
 <context-param>
@@ -42,7 +42,7 @@
 
 <context-param>
   <param-name>jdbcPassword</param-name>
-  <param-value>root</param-value>
+  <param-value>YHipgZwFXOscZRatOKMsypIPRfELVnZX</param-value>
 </context-param>
 
 </web-app>
